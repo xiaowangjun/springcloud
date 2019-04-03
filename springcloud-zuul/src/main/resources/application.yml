@@ -1,0 +1,29 @@
+spring:
+    application:
+        name: springcloud-zuul
+    datasource:
+        druid:
+            driver-class-name: com.mysql.cj.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/springcloud?characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+            username: root
+            password: 123456
+    redis:
+        host: 127.0.0.1
+        port: 6379
+        database: 0
+
+server:
+    port: 8888
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8761/eureka/
+        instance:
+            prefer-ip-address: true
+
+zuul:
+    routes:
+        producer:
+            path: /springcloud-producer/**
+            serviceId: springcloud-producer
