@@ -1,6 +1,6 @@
 FROM springcloudbaseimage:latest
 
-WORKDIR /work/project
+WORKDIR /springcloud-eureka
 
 
 CMD java -jar eureka.jar
