@@ -1,5 +1,6 @@
 FROM springcloudbaseimage:latest
 
-COPY eureka.jar /eureka.jar
+WORKDIR /work/project
 
-ENTRYPOINT [ "java", "-Dfile.encoding=UTF8", "-Duser.timezone=GMT+08", "-jar", "/eureka.jar"]
+
+CMD java -jar eureka.jar
